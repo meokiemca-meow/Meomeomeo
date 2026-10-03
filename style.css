@@ -1,0 +1,50 @@
+*{box-sizing:border-box}
+:root{--pink:#ff6f91;--pink2:#ff9eb4;--cream:#fff8f2;--dark:#38252b;--green:#45a875;--red:#e25555;--card:#fff}
+body{margin:0;background:linear-gradient(135deg,#fff2f6,#fffaf3);color:var(--dark);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{padding:20px 5%;background:linear-gradient(100deg,#ff6f91,#ff9eb4);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;box-shadow:0 3px 15px #0002}
+h1,h2,h3,p{margin-top:0}h1{margin-bottom:4px}.subtitle{margin:0;opacity:.9}
+.header-actions{display:flex;flex-wrap:wrap;gap:8px}
+button,select{font:inherit}button{border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;background:#fff;color:var(--dark);transition:.15s}
+button:hover{transform:translateY(-1px);filter:brightness(.98)}button:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.primary{background:var(--green);color:#fff}.danger{background:var(--red);color:#fff}.big{width:100%;font-size:17px;margin-top:15px}
+main{width:min(1100px,92%);margin:22px auto}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:15px}
+.stat,.card{background:var(--card);border-radius:18px;padding:18px;box-shadow:0 5px 18px #6b3b4812;border:1px solid #f3dde3}
+.stat span{display:block;color:#806b72;font-size:14px}.stat b{font-size:22px;display:block;margin-top:4px}
+.notice{background:#fff0c9;border:1px solid #f1d889;border-radius:13px;padding:12px 15px;margin-bottom:15px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:15px}
+.card h2{margin-bottom:12px}.muted{color:#7e6d73}
+label{display:block;font-weight:700;margin:11px 0 5px}
+select{width:100%;padding:11px;border:1px solid #e3cfd5;border-radius:10px;background:#fff}
+.recipe{margin-top:12px;background:#fff6f8;padding:10px;border-radius:10px;font-size:14px}
+.customer-box{display:flex;align-items:center;gap:13px;background:#fff6f8;border-radius:14px;padding:14px;margin-bottom:12px;min-height:90px}
+.customer-avatar{font-size:42px}.customer-box h3{margin-bottom:4px}.customer-box p{margin:0;color:#6e5d63}
+.feedback{margin-top:13px;padding:13px;border-radius:13px;background:#f5f0ff;border:1px solid #ddd0fa}.feedback p{margin:8px 0}.feedback-actions{display:flex;gap:8px}.hidden{display:none}
+.upgrade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.upgrade{padding:14px;border-radius:14px;background:#fff7f8;border:1px solid #f0dbe1}.upgrade h3{margin-bottom:8px}.upgrade p{min-height:44px;color:#6e5d63}.upgrade button{background:var(--pink);color:#fff;width:100%}
+.inventory-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed #e3d2d7}
+.log{max-height:220px;overflow:auto}.log div{padding:8px 0;border-bottom:1px solid #eee;font-size:14px}
+.tips li{margin:8px 0}footer{text-align:center;padding:20px;color:#866f77}
+@media(max-width:800px){header{flex-direction:column;align-items:flex-start}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.upgrade-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){main{width:94%}.upgrade-grid{grid-template-columns:1fr}.header-actions button{padding:8px 10px}.card{padding:14px}}
+
+
+/* Màn hình đặt tên quán */
+.name-screen{
+  position:fixed;inset:0;z-index:9999;display:flex;justify-content:center;
+  align-items:center;padding:20px;background:linear-gradient(135deg,#ff6f91,#ffc2d1)
+}
+.name-box{
+  width:min(420px,100%);padding:30px 25px;background:#fff;border-radius:25px;
+  text-align:center;box-shadow:0 15px 40px rgba(0,0,0,.2)
+}
+.logo{font-size:65px;margin-bottom:10px}
+.name-box h1{color:#38252b;margin-bottom:8px}
+.name-box p{color:#806b72}
+#shopNameInput{
+  width:100%;padding:14px;margin:15px 0;border:2px solid #ffd0da;
+  border-radius:12px;font-size:16px;outline:none
+}
+#shopNameInput:focus{border-color:#ff6f91}
+.start-btn{width:100%;padding:14px;background:#ff6f91;color:#fff;font-size:17px;border-radius:12px}
+.start-btn:hover{background:#ff557d}

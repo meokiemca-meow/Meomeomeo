@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quán Trà Sữa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="nameScreen" class="name-screen">
+    <div class="name-box">
+      <div class="logo">🧋</div>
+      <h1>Chào mừng đến với quán!</h1>
+      <p>Hãy đặt tên cho quán trà sữa của bạn</p>
+      <input type="text" id="shopNameInput" placeholder="Nhập tên quán..." maxlength="30" autocomplete="off">
+      <button id="startGameBtn" class="start-btn">🧋 Bắt đầu kinh doanh</button>
+    </div>
+  </div>
+
+  <header>
+    <div>
+      <h1 id="shopTitle">🧋 Quán Trà Sữa</h1>
+      <p class="subtitle">Quản lý quán • pha chế • nâng cấp • lưu dữ liệu</p>
+    </div>
+    <div class="header-actions">
+      <button id="renameBtn">✏️ Đổi tên quán</button>
+      <button id="saveBtn">💾 Lưu</button>
+      <button id="resetBtn" class="danger">🗑️ Xóa dữ liệu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats">
+      <div class="stat"><span>💰 Tiền</span><b id="money">0đ</b></div>
+      <div class="stat"><span>⭐ Uy tín</span><b id="reputation">0%</b></div>
+      <div class="stat"><span>👥 Khách hôm nay</span><b id="customers">0</b></div>
+      <div class="stat"><span>📅 Ngày</span><b id="day">1</b></div>
+    </section>
+
+    <div id="notice" class="notice">Chào mừng bạn đến với quán!</div>
+
+    <section class="grid">
+      <div class="card">
+        <h2>👨‍🍳 Pha chế</h2>
+        <p class="muted">Chọn trà, vị và topping để phục vụ khách.</p>
+        <label>🍵 Trà nền</label>
+        <select id="teaSelect"></select>
+        <label>🍓 Vị</label>
+        <select id="flavorSelect"></select>
+        <label>🧋 Topping</label>
+        <select id="toppingSelect"></select>
+        <button id="makeBtn" class="primary big">🧋 Pha ly này</button>
+        <div id="recipeInfo" class="recipe"></div>
+      </div>
+
+      <div class="card">
+        <h2>👤 Khách hàng</h2>
+        <div id="customer" class="customer-box">
+          <div class="customer-avatar">🙂</div>
+          <div>
+            <h3 id="customerName">Chưa có khách</h3>
+            <p id="customerOrder">Hãy mở cửa đón khách.</p>
+          </div>
+        </div>
+        <button id="openBtn" class="primary">🚪 Đón khách mới</button>
+        <div id="feedbackBox" class="feedback hidden">
+          <strong>💬 Feedback</strong>
+          <p id="feedbackText"></p>
+          <div class="feedback-actions">
+            <button id="replyGood">🙏 Xin lỗi / cảm ơn</button>
+            <button id="replyBad" class="danger">😡 Chửi khách</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>⬆️ Nâng cấp quán</h2>
+      <div class="upgrade-grid">
+        <div class="upgrade">
+          <h3>🍵 Trà</h3>
+          <p>Cấp <b id="teaLevel">1</b> — <span id="teaDesc"></span></p>
+          <button id="upgradeTea">Nâng cấp — <span id="teaCost"></span></button>
+        </div>
+        <div class="upgrade">
+          <h3>🍓 Vị</h3>
+          <p>Cấp <b id="flavorLevel">1</b> — <span id="flavorDesc"></span></p>
+          <button id="upgradeFlavor">Nâng cấp — <span id="flavorCost"></span></button>
+        </div>
+        <div class="upgrade">
+          <h3>🧋 Topping</h3>
+          <p>Cấp <b id="toppingLevel">1</b> — <span id="toppingDesc"></span></p>
+          <button id="upgradeTopping">Nâng cấp — <span id="toppingCost"></span></button>
+        </div>
+        <div class="upgrade">
+          <h3>🏪 Trang trí</h3>
+          <p>Cấp <b id="decorLevel">1</b> — tăng lượng khách.</p>
+          <button id="upgradeDecor">Nâng cấp — <span id="decorCost"></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>📦 Kho nguyên liệu</h2>
+        <div id="inventory"></div>
+        <button id="restockBtn" class="primary">📦 Nhập hàng</button>
+      </div>
+
+      <div class="card">
+        <h2>📊 Nhật ký quán</h2>
+        <div id="log" class="log"></div>
+      </div>
+    </section>
+
+    <section class="card tips">
+      <h2>💡 Cách chơi</h2>
+      <ol>
+        <li>Đón khách để xem khách muốn uống gì.</li>
+        <li>Chọn đúng trà, vị và topping rồi bấm <b>Pha ly này</b>.</li>
+        <li>Khách hài lòng sẽ trả tiền và giúp tăng uy tín.</li>
+        <li>Nâng cấp để mở thêm lựa chọn và tăng giá bán.</li>
+        <li>Dữ liệu được tự động lưu vào trình duyệt sau mỗi hành động.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>🧋 Quán Trà Sữa — dữ liệu lưu trên thiết bị này</footer>
+  <script src="script.js"></script>
+</body>
+</html>
